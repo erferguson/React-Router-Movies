@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// import Movie from './Movie';
+
 import axios from 'axios';
 
 const MovieList = props => {
   const [movies, setMovies] = useState([])
+  
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -29,10 +32,12 @@ const MovieList = props => {
   );
 }
 
+
+//
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
-    <Link to ={`/movie-list/${movie.id}`}> 
+    <Link to ={`/movies/${movie.id}`}> 
 
     <div className="movie-card">
       <h2>{title}</h2>
@@ -50,7 +55,7 @@ function MovieDetails({ movie }) {
         </div>
       ))}
     </div>
-    
+
     </Link> 
   );
 }
