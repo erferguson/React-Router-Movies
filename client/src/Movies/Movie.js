@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
 import axios from 'axios';
 import MovieCard from './MovieCard';
 
@@ -23,7 +22,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[props.match.params.id]); // dependency array
+  },[]); // dependency array?
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
